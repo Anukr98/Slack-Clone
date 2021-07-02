@@ -1,0 +1,37 @@
+.menu-icon__line::before,
+.menu-icon__line::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: .25rem;
+    background: white;
+    transition: .5s;
+}
+
+.menu-icon__line::before {
+    transform: translateY(-5px);
+}
+
+.menu-icon__line::after {
+    transform: translateY(5px);
+}
+
+.menu-btn:checked ~ .nav__links {
+    opacity: 1;
+}
+
+.menu-btn:checked ~ .menu-icon > .menu-icon__line::after,
+.menu-btn:checked ~ .menu-icon > .menu-icon__line::before {
+    transform: translateY(0);
+    background: black;
+    height: 200%;
+}
+
+.menu-btn:checked ~ .menu-icon > .menu-icon__line::after {
+    transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon > .menu-icon__line::before {
+    transform: rotate(-45deg);
+}
